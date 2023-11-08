@@ -10,11 +10,11 @@
 # Función que muestra los nombres únicos de primaria y secundaria
 def mostrar_alumnos(nombres_primaria, nombres_secundaria):
     print("\nNombres de todos los alumnos de primaria:")
-    nombres_primaria_unicos = list(set(nombres_primaria))
+    nombres_primaria_unicos = sorted(list(set(nombres_primaria)))
     print(nombres_primaria_unicos)
     
     print("\nNombres de todos los alumnos de secundaria:")
-    nombres_secundaria_unicos = list(set(nombres_secundaria))
+    nombres_secundaria_unicos = sorted(list(set(nombres_secundaria)))
     print(nombres_secundaria_unicos)
     return nombres_primaria_unicos, nombres_secundaria_unicos
 
@@ -50,13 +50,13 @@ if __name__ == "__main__":
     print("Introduce los nombres de los alumnos de primaria (escribe 'x' para terminar):")
     nombre = input("Nombre: ")
     # Proceso
-    while nombre.lower() != "x":
+    while nombre.lower() != "x" and (not nombre.isalpha() or len(nombre.strip()) == 0):
         nombres_primaria.append(nombre)
         nombre = input("Nombre: ")
 
     print("Introduce los nombres de los alumnos de secundaria (escribe 'x' para terminar):")
     nombre = input("Nombre: ")
-    while nombre.lower() != "x":
+    while nombre.lower() != "x" and (not nombre.isalpha() or len(nombre.strip()) == 0):
         nombres_secundaria.append(nombre)
         nombre = input("Nombre: ")
     # Proceso y salida
