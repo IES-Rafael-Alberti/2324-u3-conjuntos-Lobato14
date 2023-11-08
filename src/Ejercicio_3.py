@@ -16,10 +16,10 @@ def conjunto_potencia(s):
     total_subconjuntos = 1 << total_elementos
     potencia = [set() for _ in range(total_subconjuntos)]
 
-    for i in range(total_subconjuntos):
-        for j in range(total_elementos):
-            if (i >> j) & 1:
-                potencia[i].add(elementos[j])
+    for subconjunto_numero in range(total_subconjuntos):
+        for elemento_numero in range(total_elementos):
+            if (subconjunto_numero >> elemento_numero) & 1:
+                potencia[subconjunto_numero].add(elementos[elemento_numero])
     return potencia
 
 if __name__ == "__main__":
