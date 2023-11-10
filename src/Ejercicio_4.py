@@ -11,19 +11,55 @@
 # 4. Encuentra las frutas que están en frutas2 pero no en frutas1 y guárdalas en un 
 # conjunto llamado frutas_solo_en_frutas2.
 
-# Función para encontrar las frutas que están en ambas listas
-def encontrar_frutas_ambos(set_frutas1, set_frutas2):
+def encontrar_frutas_ambos(set_frutas1: set, set_frutas2: set) -> set:
+    """
+    Encuentra las frutas que están en ambas listas.
+
+    Parameters:
+    - set_frutas1 : set
+        Primer conjunto de frutas.
+    - set_frutas2 : set
+        Segundo conjunto de frutas.
+
+    Returns:
+    - set
+        Conjunto de frutas que están en ambas listas.
+    """
     frutas_comunes = set_frutas1.intersection(set_frutas2)
     return frutas_comunes
 
-# Función para encontrar las frutas que están en frutas1 pero no en frutas2
-def solo_frutas_1(set_frutas1, set_frutas2):
+def solo_frutas_1(set_frutas1: set, set_frutas2: set) -> set:
+    """
+    Encuentra las frutas que están en frutas1 pero no en frutas2.
+
+    Parameters:
+    - set_frutas1 : set
+        Primer conjunto de frutas.
+    - set_frutas2 : set
+        Segundo conjunto de frutas.
+
+    Returns:
+    - set
+        Conjunto de frutas que están solo en frutas1.
+    """
     frutas_comunes = set_frutas1.intersection(set_frutas2)
     frutas_solo_en_frutas1 = set_frutas1 - frutas_comunes
     return frutas_solo_en_frutas1
 
-# Función para encontrar las frutas que están en frutas2 pero no en frutas1
-def solo_frutas_2(set_frutas1, set_frutas2):
+def solo_frutas_2(set_frutas1: set, set_frutas2: set) -> set:
+    """
+    Encuentra las frutas que están en frutas2 pero no en frutas1.
+
+    Parameters:
+    - set_frutas1 : set
+        Primer conjunto de frutas.
+    - set_frutas2 : set
+        Segundo conjunto de frutas.
+
+    Returns:
+    - set
+        Conjunto de frutas que están solo en frutas2.
+    """
     frutas_solo_en_frutas2 = set_frutas2.difference(set_frutas1)
     return frutas_solo_en_frutas2
 

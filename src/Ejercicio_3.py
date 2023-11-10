@@ -10,8 +10,19 @@
 # [set(), set([6]), set([1]), set([4]), set([6, 1]), 
 # set([6, 4]), set([1, 4]), set([6, 1, 4])]
 
-# Función que calcula el conjunto potencia de un conjunto dado.
-def conjunto_potencia(s):
+def conjunto_potencia(s: set) -> list:
+    """
+    Calcula el conjunto potencia de un conjunto dado.
+
+    Parameters:
+    - s : set
+        Conjunto del cual se calculará el conjunto potencia.
+
+    Returns:
+    - list: 
+        Lista que contiene todos los subconjuntos posibles del conjunto dado, 
+        incluyendo el conjunto vacío y el propio conjunto.
+    """
     elementos = list(s)
     total_elementos = len(elementos)
     # Calcula el número total de subconjuntos posibles utilizando operación de 
