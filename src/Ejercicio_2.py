@@ -7,8 +7,22 @@
 # 3. Mostrar qué nombres de primaria no se repiten en los de nivel secundaria.
 # 4. Mostrar si todos los nombres de primaria están incluidos en secundaria.
 
-# Función que muestra los nombres únicos de primaria y secundaria
-def mostrar_alumnos(nombres_primaria, nombres_secundaria):
+def mostrar_alumnos(nombres_primaria: list, nombres_secundaria: list) -> tuple:
+    """
+    Muestra los nombres únicos de los alumnos de primaria y secundaria.
+
+    Parameters
+    ----------
+    - nombres_primaria : list
+        Lista de nombres de alumnos de primaria.
+    - nombres_secundaria : list
+        Lista de nombres de alumnos de secundaria.
+
+    Returns
+    -------
+    - tuple
+        Tupla que contiene dos listas: nombres únicos de primaria y nombres únicos de secundaria.
+    """
     print("\nNombres de todos los alumnos de primaria:")
     nombres_primaria_unicos = sorted(list(set(nombres_primaria)))
     print(nombres_primaria_unicos)
@@ -18,24 +32,68 @@ def mostrar_alumnos(nombres_primaria, nombres_secundaria):
     print(nombres_secundaria_unicos)
     return nombres_primaria_unicos, nombres_secundaria_unicos
 
-# Función que muestra los nombres que se repiten entre primaria y secundaria
-def mostrar_nombres_repetidos(nombres_primaria_unicos, nombres_secundaria_unicos):
+
+def mostrar_nombres_repetidos(nombres_primaria_unicos: list, nombres_secundaria_unicos: list) -> list:
+    """
+    Muestra los nombres que se repiten entre primaria y secundaria.
+
+    Parameters
+    ----------
+    - nombres_primaria_unicos : list
+        Lista de nombres únicos de alumnos de primaria.
+    - nombres_secundaria_unicos : list
+        Lista de nombres únicos de alumnos de secundaria.
+
+    Returns
+    --------
+    - list
+        Lista de nombres que se repiten entre primaria y secundaria.
+    """
     print("\nNombres que se repiten entre primaria y secundaria:")
     nombres_repetidos = list(set(nombres_primaria_unicos) & set(nombres_secundaria_unicos))
     print(nombres_repetidos)
     return nombres_repetidos
 
-# Función que muestra los nombres de primaria que no se repiten en secundaria
-def mostrar_nomb_primaria_no_sec(nombres_primaria_unicos, nombres_secundaria_unicos):
+
+def mostrar_nomb_primaria_no_sec(nombres_primaria_unicos: list, nombres_secundaria_unicos: list) -> list:
+    """
+    Muestra los nombres de primaria que no se repiten en secundaria.
+
+    Parameters
+    ----------
+    - nombres_primaria_unicos : list
+        Lista de nombres únicos de alumnos de primaria.
+    - nombres_secundaria_unicos : list
+        Lista de nombres únicos de alumnos de secundaria.
+
+    Returns
+    -------
+    - list
+        Lista de nombres de primaria que no se repiten en secundaria.
+    """
     print("\nNombres de primaria que no se repiten en secundaria:")
     nombres_no_repetidos = list(set(nombres_primaria_unicos) - set(nombres_secundaria_unicos))
     print(nombres_no_repetidos)
     return nombres_no_repetidos
 
-# Funcióm que verifica si todos los nombres de primaria están incluidos en secundaria
-def verificar_nomb_primaria_sec(nombres_primaria_unicos, nombres_secundaria_unicos):
-    # issubset() se utiliza para verificar  si el conjunto de nombres de primaria
-    # es un subconjunto del conjunto de nombres de secundaria  
+
+def verificar_nomb_primaria_sec(nombres_primaria_unicos: list, nombres_secundaria_unicos: list) -> bool:
+    """
+    Verifica si todos los nombres de primaria están incluidos en secundaria.
+
+    Parameters
+    ----------
+    - nombres_primaria_unicos : list
+        Lista de nombres únicos de alumnos de primaria.
+    - nombres_secundaria_unicos : list
+        Lista de nombres únicos de alumnos de secundaria.
+
+    Returns
+    -------
+    - bool
+        True si todos los nombres de primaria están incluidos en secundaria, False en caso contrario.
+    """
+    
     if set(nombres_primaria_unicos).issubset(set(nombres_secundaria_unicos)):
         print("\nTodos los nombres de primaria están incluidos en secundaria.")
         return True

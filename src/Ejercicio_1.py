@@ -12,9 +12,22 @@
 # mes, por lo que la función debe retornar una estructura que contenga cada domicilio 
 # una sola vez.
 
-# Funcion que obtiene los domicilios de los clientes
-def obtener_domicilios_compra(lista_compras):
-    domicilios = {}  
+def obtener_domicilios_compra(lista_compras: list) -> list:
+    """
+    Obtiene los domicilios de los clientes a partir de una lista de compras.
+
+    Parameters
+    ----------
+    - lista_compras : list
+        Lista que contiene información de las compras, donde cada elemento es una tupla
+        con la estructura (cliente, mes, monto, domicilio).
+
+    Returns
+    --------
+    - list
+        Lista de domicilios de los clientes.
+    """
+    domicilios = {}
     for compra in lista_compras:
         cliente, mes, monto, domicilio = compra
         domicilios[cliente] = domicilio
