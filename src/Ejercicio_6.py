@@ -11,7 +11,7 @@ def encontrar_consonantes() -> set:
     Encuentra las consonantes en el alfabeto.
 
     Returns:
-    - set
+    - set:
         Conjunto de consonantes en el alfabeto.
     """
     alfabeto = set('abcdefghijklmnopqrstuvwxyz')
@@ -30,7 +30,7 @@ def encontrar_letras_comunes(consonantes: set, vocales: set) -> set:
         Conjunto de vocales.
 
     Returns:
-    - set
+    - set:
         Conjunto de letras comunes entre consonantes y vocales.
     """
     letras_comunes = vocales.intersection(consonantes)
